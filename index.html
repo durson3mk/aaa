@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة نخبة البيطاش الضوي</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #ffcc00;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #ff6600;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .suggestions {
+            background-color: #292929;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .suggestions h2 {
+            color: #ffcc00;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suggestions ul li {
+            background-color: #333;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .suggestions ul li:hover {
+            background-color: #444;
+            transform: translateY(-5px);
+        }
+
+        button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <img src="images (1).jpg" alt="School Logo">
+        <ul>
+            <li><a href="#">facebook </a></li>
+            <li><a href="#"> صفحة الفيس بوك الاصلية</a></li>
+            <li><a href="#">المدرسون</a></li>
+            <li><a href="form.html">تسجيل الدخول</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>مرحبًا بكم في مدرسة نخبة البيطاش الضوي</h1>
+        <p class="welcome-message">استعدوا لتجربة تعليمية مثيرة!</p>
+    </div>
+    <div class="school-info">
+        <h2>معلومات عن المدرسة</h2>
+        <p>مدرسة نخبة البيطاش الضوي هي مؤسسة تعليمية تهدف إلى تقديم تعليم عالي الجودة للطلاب. نحن نؤمن بأهمية التعليم الشامل الذي يركز على تطوير المهارات الأكاديمية والشخصية.</p>
+        <p>تقدم المدرسة مجموعة متنوعة من البرامج الدراسية والأنشطة اللامنهجية التي تساعد الطلاب على تحقيق إمكاناتهم الكاملة.</p>
+        <p>تتميز المدرسة بجوها الإيجابي والداعم، حيث يعمل المعلمون والموظفون بجد لتوفير بيئة تعليمية مريحة ومحفزة. نحن نرحب بالطلاب المتفوقين ونسعى لتقديم أفضل الفرص لهم لتحقيق النجاح.</p>
+    </div>
+    <div class="teachers">
+        <h2>المدرسون</h2>
+        <ul id="teachers-list">
+            <li>
+                <strong>أستاذ: محمد الضوي</strong>
+                <button onclick="toggleDetails('details1')">عرض التفاصيل</button>
+                <div id="details1" class="teacher-details" style="display: none;">
+                    <p>أستاذ محمد الضوي هو معلم ذو خبرة تزيد عن 10 سنوات وهو يملك المدرسة كاملة (مدير المدرسة).</p>
+                </div>
+            </li>
+            <li>
+                <strong>أستاذ: أحمد عبد المولى</strong>
+                <button onclick="toggleDetails('details2')">عرض التفاصيل</button>
+                <div id="details2" class="teacher-details" style="display: none;">
+                    <p>أستاذ أحمد عبد المولى متخصص في اللغة العربية، لديه شغف كبير بالأدب العربي ويعمل على تطوير مهارات الكتابة لدى الطلاب ومشرف  على المدرسة</p>
+                </div>
+            </li>
+            <li>
+                <strong>أستاذ: معاذ</strong>
+                <button onclick="toggleDetails('details3')">عرض التفاصيل</button>
+                <div id="details3" class="teacher-details" style="display: none;">
+                    <p>أستاذ معاذ هو لغة عربية يعطي الفصول الاعدادية والفصول العليا في المدرسة .</p>
+                </div>
+            </li>
+            <li>
+                <strong>أستاذ: محمود</strong>
+                <button onclick="toggleDetails('details4')">عرض التفاصيل</button>
+                <div id="details4" class="teacher-details" style="display: none;">
+                    <p>أستاذ محمود متخصص في علم النفس و يكون مشرفا على الفصول العليا و انه يتميز بالطيبة.</p>
+                </div>
+            </li>
+            <li>
+                <strong>أستاذ: إيهاب</strong>
+                <button onclick="toggleDetails('details5')">عرض التفاصيل</button>
+                <div id="details5" class="teacher-details" style="display: none;">
+                    <p>أستاذ ايهاب استاذ علوم قوي و متفوق .</p>
+                </div>
+            </li>
+            <li>
+                <strong>أستاذ: محمد جمال</strong>
+                <button onclick="toggleDetails('details6')">عرض التفاصيل</button>
+                <div id="details6" class="teacher-details" style="display: none;">
+                    <p>أستاذ محمد جمال  متخصص في التاريخ، لديه معرفة واسعة بالتاريخ العالمي والمحلي ويشجع الطلاب على استكشاف الماضي.</p>
+                </div>
+            </li>
+            <li>
+                <strong>أستاذ: محمد عبد السلام</strong>
+                <button onclick="toggleDetails('details7')">عرض التفاصيل</button>
+                <div id="details7" class="teacher-details" style="display: none;">
+                    <p> استاذ محمد عبد السلام معلم تكنولوجيا المعلومات، يعمل على تطوير مهارات الطلاب في البرمجة والتكنولوجيا الحديث </p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="suggestions">
+        <h2>اقتراحات للمدرسة</h2>
+        <form id="suggestion-form">
+            <div style="margin-bottom: 15px;">
+                <label for="name" style="display: block; font-weight: bold; color: #ffcc00;">اسمك:</label>
+                <input type="text" id="name" name="name" required placeholder="أدخل اسمك"
+                style="width: 100%; padding: 10px; border-radius: 5px; border: none; background-color: #333; color: #fff;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="suggestion" style="display: block; font-weight: bold; color: #ffcc00;">اقتراحك:</label>
+                <textarea id="suggestion" name="suggestion" required placeholder="اكتب اقتراحك هنا..." 
+                                        style="width: 100%; padding: 10px; border-radius: 5px; border: none; background-color: #333; color: #fff; resize: vertical;"></textarea>
+            </div>
+            <button type="submit">إرسال الاقتراح</button>
+        </form>
+        <div id="suggestions-display" style="margin-top: 20px; background-color: #292929; padding: 20px; border-radius: 10px;">
+            <h3 style="color: #ffcc00;">الاقتراحات المقدمة:</h3>
+            <ul id="suggestions-list" style="list-style-type: none; padding: 0; color: #f4f4f4;"></ul>
+        </div>
+        <button id="clear-suggestions">مسح الاقتراحات</button>
+    </div>
+
+    <script>
+        function toggleDetails(detailId) {
+            const details = document.getElementById(detailId);
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+
+        const form = document.getElementById('suggestion-form');
+        const suggestionsList = document.getElementById('suggestions-list');
+        const clearButton = document.getElementById('clear-suggestions');
+
+        // Load suggestions from localStorage if they exist
+        window.onload = function () {
+            const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            storedSuggestions.forEach(suggestion => {
+                addSuggestionToList(suggestion.name, suggestion.suggestion);
+            });
+        }
+
+        // Add suggestion to the list
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const suggestion = document.getElementById('suggestion').value;
+
+            // Save suggestion to localStorage
+            const storedSuggestions = JSON.parse(localStorage.getItem('suggestions')) || [];
+            storedSuggestions.push({ name, suggestion });
+            localStorage.setItem('suggestions', JSON.stringify(storedSuggestions));
+
+            // Add to the list view
+            addSuggestionToList(name, suggestion);
+
+            form.reset();
+        });
+
+        // Clear suggestions from localStorage and the view
+        clearButton.addEventListener('click', function () {
+            localStorage.removeItem('suggestions');
+            suggestionsList.innerHTML = '';
+        });
+
+        // Helper function to add suggestion to the list view
+        function addSuggestionToList(name, suggestion) {
+            const listItem = document.createElement('li');
+            listItem.style.margin = '10px 0';
+            listItem.style.backgroundColor = '#333';
+            listItem.style.padding = '10px';
+            listItem.style.borderRadius = '5px';
+            listItem.innerHTML = `<strong>${name}:</strong> ${suggestion}`;
+            suggestionsList.appendChild(listItem);
+        }
+    </script>
+
+    <h1>للتواصل: +20 1011866338</h1>
+
+</body>
+
+</html>

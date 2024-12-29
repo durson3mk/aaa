@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;  
+        background-image: url('snow.jpg');
+        background-size: cover; 
+        background-position: center; 
+    }
+
+        .forgot-container {
+            background-color: #fff;
+            width: 350px;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .forgot-container h1 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .forgot-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #343a40;
+            color: #fff;
+            margin-bottom: 10px; /* إضافة مسافة بين الأزرار */
+        }
+
+        .button-container button:hover {
+            background-color: #23272b;
+        }
+    </style>
+</head>
+<body>
+    <form id="forgot-form">
+        <div class="forgot-container">
+            <h1>Forgot Password</h1>
+            <input type="email" id="forgot-email" placeholder="Enter your email" required>
+            <input type="password" id="new-password-forgot" placeholder="Enter new password" required>
+            <div class="button-container">
+                <button type="submit">Reset Password</button>
+                <button type="button" onclick="window.location.href='form.html'">Back To Login</button>
+            </div>
+        </div>
+    </form>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem('users')) || {};
+
+        document.getElementById('forgot-form').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById('forgot-email').value;
+            const newPassword = document.getElementById('new-password-forgot').value;
+
+            if (users[email]) {
+                users[email] = newPassword;
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('تم تغيير كلمة المرور بنجاح! يمكنك الآن تسجيل الدخول.');
+                window.location.href = 'form.html'; 
+            } else {
+                alert('هذا البريد الإلكتروني غير مسجل.');
+            }
+        });
+    </script>
+</body>
+</html>
